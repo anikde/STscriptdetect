@@ -3,11 +3,13 @@ import clip
 from PIL import Image
 from io import BytesIO
 import os
+import requests
 
 # Model information dictionary containing model paths and language subcategories
 model_info = {
     "hineng": {
         "path": "models/clip_finetuned_hindienglish_real.pth",
+        "url": "https://github.com/anikde/STscriptdetect/releases/download/V1/clip_finetuned_hindienglish_real.pth",
         "subcategories": ["hindi", "english"]
     },
     "hinengasm": {
@@ -101,7 +103,22 @@ class CLIPFineTuner(torch.nn.Module):
             features = self.model.encode_image(x).float()  # Extract image features from CLIP model
         return self.classifier(features)  # Return class logits
 
+# Ensure model file exists; download directly if not
+def ensure_model(model_name):
+    model_path = model_info[model_name]["path"]
+    url = model_info[model_name]["url"]
+    
+    if not os.path.exists(model_path):
+        print(f"Model not found locally. Downloading {model_name} from {url}...")
+        response = requests.get(url, stream=True)
+        os.makedirs("models", exist_ok=True)
+        with open(model_path, "wb") as f:
+            f.write(response.content)
+        print(f"Downloaded model for {model_name}.")
+    
+    return model_path
 
+# Prediction function to verify and load the model
 def predict(image_path, model_name):
     """
     Predicts the class of an input image using a fine-tuned CLIP model.
@@ -122,12 +139,16 @@ def predict(image_path, model_name):
         if model_name not in model_info:
             return {"error": "Invalid model name"}
 
+        # Ensure the model file is downloaded and accessible
+        model_path = ensure_model(model_name)
+
+
         subcategories = model_info[model_name]["subcategories"]
         num_classes = len(subcategories)
 
         # Load the fine-tuned model with the specified number of classes
         model_ft = CLIPFineTuner(clip_model, num_classes)
-        model_ft.load_state_dict(torch.load(model_info[model_name]["path"], map_location=device))
+        model_ft.load_state_dict(torch.load(model_path, map_location=device))
         model_ft = model_ft.to(device)
         model_ft.eval()
 
@@ -151,7 +172,6 @@ if __name__ == "__main__":
 
     # Argument parser for command line usage
     parser = argparse.ArgumentParser(description="Image classification using CLIP fine-tuned model")
-    # parser.add_argument("model_path", type=str, help="Path to the fine-tuned model")
     parser.add_argument("image_path", type=str, help="Path to the input image")
     parser.add_argument("model_name", type=str, choices=model_info.keys(), help="Name of the model (e.g., hineng, hinengpun, hinengguj)")
 
