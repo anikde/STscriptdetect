@@ -12,6 +12,13 @@ pip install openai-clip==1.0.1
 ```
 
 ## Inference
+Download the models and save them to a particular location.
+```
+wget -O model.zip "https://github.com/username/repository/releases/download/tag/model.zip"
+mkdir models
+unzip model.zip -d models
+
+```
 
 Script detection can be done using ```infer.py``` with an image as input.
 
@@ -25,7 +32,16 @@ Simply replace ```demo_images/D_image_149_9.jpg``` with your image path and ```h
 ## Supported Languages
 Each model includes Hindi and English, with the third language varying as follows:
 
-hinengpun: Hindi, English, Punjabi
-hineng: Hindi, English
-hinengguj: Hindi, English, Gujarati
-hinengodi: Hindi, English, Odia
+- hineng: Hindi, English
+- hinengasm: Hindi, English, Assamese
+- hinengben: Hindi, English, Bengali
+- hinengguj: Hindi, English, Gujarati
+- hinengkan: Hindi, English, Kannada
+- hinengmal: Hindi, English, Malayalam
+- hinengmar: Hindi, English, Marathi
+- hinengmei: Hindi, English, Meitei
+- hinengodi: Hindi, English, Odia
+- hinengpun: Hindi, English, Punjabi
+- hinengtam: Hindi, English, Tamil
+- hinengtel: Hindi, English, Telugu
+- hinengurd: Hindi, English, Urdu
