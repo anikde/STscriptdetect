@@ -34,7 +34,7 @@ model_info = {
     },
     "hinengmal": {
         "path": "models/clip_finetuned_hindienglishmalayalam_real.pth",
-        "url" : "https://github.com/anikde/STscriptdetect/releases/download/V1/clip_finetuned_hindienglishmalayalam_real.pth"
+        "url" : "https://github.com/anikde/STscriptdetect/releases/download/V1/clip_finetuned_hindienglishmalayalam_real.pth",
         "subcategories": ["hindi", "english", "malayalam"]
     },
     "hinengmar": {
