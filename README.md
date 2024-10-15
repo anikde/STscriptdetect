@@ -12,12 +12,11 @@ pip install openai-clip==1.0.1
 ```
 
 ## Inference
-Download the models and save them to a particular location.
+To get started, clone the repository and make "models" direcotory so that model gets downloaded as we inference script.
 ```
-wget -O model.zip "https://github.com/username/repository/releases/download/tag/model.zip"
+git clone https://github.com/anikde/STscriptdetect.git
+cd STscriptdetect
 mkdir models
-unzip model.zip -d models
-
 ```
 
 Script detection can be done using ```infer.py``` with an image as input.
