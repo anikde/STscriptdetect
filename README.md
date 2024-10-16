@@ -1,5 +1,5 @@
-# ScriptIdentification
-ScriptIdentification is designed to identify the script (language) of text within images from natural scenes. This repository includes the inference code and models needed for prediction. Each model is structured as a triplet, with Hindi and English as common languages alongside a third language listed below. 
+# Script Identification
+Script Identification is designed to identify the script (language) of text within images from natural scenes. This repository includes the inference code and models needed for prediction. Each model is structured as a triplet, with Hindi and English as common languages alongside a third language listed below. 
 
 ## Installation
 Create a conda environment and install the dependencies.
