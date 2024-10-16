@@ -19,13 +19,20 @@ cd STscriptdetect
 mkdir models
 ```
 
-Script detection can be done using ```infer.py``` with an image as input.
+Script detection can be done using ```infer.py``` on a single image as input.
 
-```
-python infer.py demo_images/D_image_149_9.jpg hinengodi
-#{'predicted_class': 'odia'}
+```python
+python infer.py --image_path demo_images/D_image_149_9.jpg hinengodi
+# {'predicted_class': 'odia'}
 ```
 Simply replace ```demo_images/D_image_149_9.jpg``` with your image path and ```hinengodi``` with the model name for desired language detection.
+
+To process a batch of images
+```python
+python infer.py --image_dir demo_images/ hinengodi --batch
+# {'A_image_101_1.jpg': 'english', 'A_image_72_3.jpg': 'hindi', 'D_image_149_9.jpg': 'odia'}
+```
+using the ```image_dir``` and ```--batch``` argument predictions can be made on a batch of images.
 
 
 ## Supported Languages
