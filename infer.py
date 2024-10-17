@@ -10,7 +10,7 @@ import argparse
 
 # Model information dictionary containing model paths and language subcategories
 model_info = {
-    "hineng": {
+    "hindi": {
         "path": "models/clip_finetuned_hindienglish_real.pth",
         "url" : "https://github.com/anikde/STscriptdetect/releases/download/V1/clip_finetuned_hindienglish_real.pth",
         "subcategories": ["hindi", "english"]
@@ -74,9 +74,7 @@ model_info = {
         "path": "models/clip_finetuned_hindienglishurdu_real.pth",
         "url" : "https://github.com/anikde/STscriptdetect/releases/download/V1/clip_finetuned_hindienglishurdu_real.pth",
         "subcategories": ["hindi", "english", "urdu"]
-    },
-    
-
+    }
 }
 
 
