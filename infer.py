@@ -15,62 +15,62 @@ model_info = {
         "url" : "https://github.com/anikde/STscriptdetect/releases/download/V1/clip_finetuned_hindienglish_real.pth",
         "subcategories": ["hindi", "english"]
     },
-    "hinengasm": {
+    "assamese": {
         "path": "models/clip_finetuned_hindienglishassamese_real.pth",
         "url": "https://github.com/anikde/STscriptdetect/releases/download/V1/clip_finetuned_hindienglishassamese_real.pth",
         "subcategories": ["hindi", "english", "assamese"]
     },
-    "hinengben": {
+    "bengali": {
         "path": "models/clip_finetuned_hindienglishbengali_real.pth",
         "url" : "https://github.com/anikde/STscriptdetect/releases/download/V1/clip_finetuned_hindienglishbengali_real.pth",
         "subcategories": ["hindi", "english", "bengali"]
     },
-    "hinengguj": {
+    "gujarati": {
         "path": "models/clip_finetuned_hindienglishgujarati_real.pth",
         "url" : "https://github.com/anikde/STscriptdetect/releases/download/V1/clip_finetuned_hindienglishgujarati_real.pth",
         "subcategories": ["hindi", "english", "gujarati"]
     },
-    "hinengkan": {
+    "kannada": {
         "path": "models/clip_finetuned_hindienglishkannada_real.pth",
         "url" : "https://github.com/anikde/STscriptdetect/releases/download/V1/clip_finetuned_hindienglishkannada_real.pth",
         "subcategories": ["hindi", "english", "kannada"]
     },
-    "hinengmal": {
+    "malayalam": {
         "path": "models/clip_finetuned_hindienglishmalayalam_real.pth",
         "url" : "https://github.com/anikde/STscriptdetect/releases/download/V1/clip_finetuned_hindienglishmalayalam_real.pth",
         "subcategories": ["hindi", "english", "malayalam"]
     },
-    "hinengmar": {
+    "marathi": {
         "path": "models/clip_finetuned_hindienglishmarathi_real.pth",
         "url" : "https://github.com/anikde/STscriptdetect/releases/download/V1/clip_finetuned_hindienglishmarathi_real.pth",
         "subcategories": ["hindi", "english", "marathi"]
     },
-    "hinengmei": {
+    "meitei": {
         "path": "models/clip_finetuned_hindienglishmeitei_real.pth",
         "url" : "https://github.com/anikde/STscriptdetect/releases/download/V1/clip_finetuned_hindienglishmeitei_real.pth",
         "subcategories": ["hindi", "english", "meitei"]
     },
-    "hinengodi": {
+    "odia": {
         "path": "models/clip_finetuned_hindienglishodia_real.pth",
         "url" : "https://github.com/anikde/STscriptdetect/releases/download/V1/clip_finetuned_hindienglishodia_real.pth",
         "subcategories": ["hindi", "english", "odia"]
     },
-    "hinengpun": {
+    "punjabi": {
         "path": "models/clip_finetuned_hindienglishpunjabi_real.pth",
         "url" : "https://github.com/anikde/STscriptdetect/releases/download/V1/clip_finetuned_hindienglishpunjabi_real.pth",
         "subcategories": ["hindi", "english", "punjabi"]
     },
-    "hinengtam": {
+    "tamil": {
         "path": "models/clip_finetuned_hindienglishtamil_real.pth",
         "url" : "https://github.com/anikde/STscriptdetect/releases/download/V1/clip_finetuned_hindienglishtamil_real.pth",
         "subcategories": ["hindi", "english", "tamil"]
     },
-    "hinengtel": {
+    "telugu": {
         "path": "models/clip_finetuned_hindienglishtelugu_real.pth",
         "url" : "https://github.com/anikde/STscriptdetect/releases/download/V1/clip_finetuned_hindienglishtelugu_real.pth",
         "subcategories": ["hindi", "english", "telugu"]
     },
-    "hinengurd": {
+    "urdu": {
         "path": "models/clip_finetuned_hindienglishurdu_real.pth",
         "url" : "https://github.com/anikde/STscriptdetect/releases/download/V1/clip_finetuned_hindienglishurdu_real.pth",
         "subcategories": ["hindi", "english", "urdu"]
