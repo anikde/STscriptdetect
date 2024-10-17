@@ -12,7 +12,7 @@ pip install openai-clip==1.0.1
 ```
 
 ## Inference
-To get started, clone the repository and make "models" direcotory so that model gets downloaded as we inference script.
+To get started, clone the repository and make "models" direcotory so that model gets downloaded as we inference script. The models can be downloaded directly from github [assets](https://github.com/anikde/STscriptdetect/releases/tag/V1).
 ```
 git clone https://github.com/anikde/STscriptdetect.git
 cd STscriptdetect
