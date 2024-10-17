@@ -38,16 +38,16 @@ using the ```image_dir``` and ```--batch``` argument predictions can be made on 
 ## Supported Languages
 Each model includes Hindi and English, with the third language varying as follows:
 
-- hineng: Hindi, English
-- hinengasm: Hindi, English, Assamese
-- hinengben: Hindi, English, Bengali
-- hinengguj: Hindi, English, Gujarati
-- hinengkan: Hindi, English, Kannada
-- hinengmal: Hindi, English, Malayalam
-- hinengmar: Hindi, English, Marathi
-- hinengmei: Hindi, English, Meitei
-- hinengodi: Hindi, English, Odia
-- hinengpun: Hindi, English, Punjabi
-- hinengtam: Hindi, English, Tamil
-- hinengtel: Hindi, English, Telugu
-- hinengurd: Hindi, English, Urdu
+- hindi: Hindi, English
+- assamese: Hindi, English, Assamese
+- bengali: Hindi, English, Bengali
+- gujarati: Hindi, English, Gujarati
+- kannada: Hindi, English, Kannada
+- malayalam: Hindi, English, Malayalam
+- marathi: Hindi, English, Marathi
+- meitei: Hindi, English, Meitei
+- odia: Hindi, English, Odia
+- punjabi: Hindi, English, Punjabi
+- tamil: Hindi, English, Tamil
+- telugu: Hindi, English, Telugu
+- urdu: Hindi, English, Urdu
