@@ -8,6 +8,7 @@ import time
 import glob
 import argparse
 from tqdm import tqdm
+import csv
 
 # Model information dictionary containing model paths and language subcategories
 model_info = {
@@ -189,26 +190,23 @@ def predict(image_path, model_name):
     except Exception as e:
         return {"error": str(e)}
 
-def predict_batch(image_dir, model_name):
+def predict_batch(image_dir, model_name, output_csv="predictions.csv"):
     """
     Processes all images in a directory to predict the class for each image using a specified fine-tuned CLIP model.
-
+    
     Args:
         image_dir (str): Path to the directory containing image files to process.
         model_name (str): Name of the model (e.g., hineng, hinengpun, hinengguj) as specified in `model_info`.
-
+        output_csv (str): Path to save the output CSV file. Defaults to 'predictions.csv'.
+    
     Returns:
-        dict: Dictionary where keys are image filenames and values are their predicted classes.
-
-    Example usage:
-        batch_results = predict_batch("path/to/images", "hinengguj")
-        print(batch_results)  # Output might be {'image1.jpg': 'hindi', 'image2.jpg': 'english'}
+        str: Path to the CSV file containing predictions.
     """
-    results = {}
+    results = []
     
     # Validate model name and retrieve associated subcategories
     if model_name not in model_info:
-        return {"error": "Invalid model name"}
+        raise ValueError("Invalid model name.")
     
     # Ensure the model file is downloaded and accessible
     model_path = ensure_model(model_name)
@@ -239,18 +237,24 @@ def predict_batch(image_dir, model_name):
             _, predicted_idx = torch.max(outputs, 1)
             predicted_class = subcategories[predicted_idx.item()]
             
-            # Store the prediction in results dictionary
-            results[os.path.basename(image_path)] = predicted_class
+            # Append the result to the list
+            results.append({"Filepath": image_path, "Language": predicted_class})
         
         except Exception as e:
             # If an error occurs, log it in the results with the filename
-            results[os.path.basename(image_path)] = f"error: {str(e)}"
+            results.append({"Filepath": image_path, "Language": f"error: {str(e)}"})
     
     # Calculate and print the time taken to process the batch
     elapsed_time = time.time() - start_time
     print(f"Time taken to process {len(image_paths)} images: {elapsed_time:.2f} seconds")
     
-    return results
+    # Write results to a CSV file
+    with open(output_csv, mode="w", newline="", encoding="utf-8") as csvfile:
+        writer = csv.DictWriter(csvfile, fieldnames=["Filepath", "Language"])
+        writer.writeheader()
+        writer.writerows(results)
+    
+    return output_csv
 
 if __name__ == "__main__":
     # Argument parser for command line usage
