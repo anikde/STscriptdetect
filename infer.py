@@ -190,7 +190,7 @@ def predict(image_path, model_name):
     except Exception as e:
         return {"error": str(e)}
 
-def predict_batch(image_dir, model_name, output_csv="predictions.csv"):
+def predict_batch(image_dir, model_name, time_show, output_csv="predictions.csv"):
     """
     Processes all images in a directory to predict the class for each image using a specified fine-tuned CLIP model.
     
@@ -246,7 +246,8 @@ def predict_batch(image_dir, model_name, output_csv="predictions.csv"):
     
     # Calculate and print the time taken to process the batch
     elapsed_time = time.time() - start_time
-    print(f"Time taken to process {len(image_paths)} images: {elapsed_time:.2f} seconds")
+    if time_show:
+        print(f"Time taken to process {len(image_paths)} images: {elapsed_time:.2f} seconds")
     
     # Write results to a CSV file
     with open(output_csv, mode="w", newline="", encoding="utf-8") as csvfile:
@@ -263,6 +264,7 @@ if __name__ == "__main__":
     parser.add_argument("--image_dir", type=str, help="Path to the input image directory")
     parser.add_argument("--model_name", type=str, choices=model_info.keys(), help="Name of the model (e.g., hineng, hinengpun, hinengguj)")
     parser.add_argument("--batch", action="store_true", help="Process images in batch mode if specified")
+    parser.add_argument("--time",type=bool, nargs="?", const=True, default=False, help="Prints the time required to process a batch of images")
 
     args = parser.parse_args()
 
@@ -271,7 +273,7 @@ if __name__ == "__main__":
         if not args.image_dir:
             print("Error: image_dir is required when batch is set to True.")
         else:
-            result = predict_batch(args.image_dir, args.model_name)
+            result = predict_batch(args.image_dir, args.model_name, args.time)
             print(result)
     else:
         if not args.image_path:
