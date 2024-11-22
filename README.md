@@ -22,15 +22,15 @@ mkdir models
 Script detection can be done using ```infer.py``` on a single image as input.
 
 ```python
-python infer.py --image_path demo_images/D_image_149_9.jpg hinengodi
+python infer.py --image_path demo_images/D_image_149_9.jpg --model_name odia
 # {'predicted_class': 'odia'}
 ```
-Simply replace ```demo_images/D_image_149_9.jpg``` with your image path and ```hinengodi``` with the model name for desired language detection.
+Simply replace ```demo_images/D_image_149_9.jpg``` with your image path and ```odia``` with the model name for desired language detection.
 
 To process a batch of images
 ```python
-python infer.py --image_dir demo_images/ hinengodi --batch
-# {'A_image_101_1.jpg': 'english', 'A_image_72_3.jpg': 'hindi', 'D_image_149_9.jpg': 'odia'}
+python infer.py --image_dir demo_images/ --model_name odia --batch
+# predictions.csv
 ```
 using the ```image_dir``` and ```--batch``` argument predictions can be made on a batch of images.
 

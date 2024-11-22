@@ -226,7 +226,7 @@ def predict_batch(image_dir, model_name, time_show, output_csv="predictions.csv"
     start_time = time.time()
     
     # Iterate over each image path in the batch
-    for image_path in image_paths:
+    for image_path in tqdm(image_paths):
         try:
             # Load and preprocess the image
             image = Image.open(image_path).convert("RGB")
